@@ -1,6 +1,12 @@
 use std::collections::HashMap;
 use std::io::{self, Write};
 
+#[derive(Clone)]
+pub struct Contact {
+    pub phone: String,
+    pub address: String,
+}
+
 mod add_contact;
 mod view_contact;
 mod list_contacts;
@@ -15,13 +21,13 @@ use delete_contact::delete_contact;
 use load_contacts::load_contacts;
 use save_contacts::save_contacts;
 
-// const CONTACTS_FILE: &str = "contacts.txt";
+
 
 
 
 fn main() {
     // 파일에서 기존 연락처를 로드합니다
-    let mut contacts: HashMap<String, String> = load_contacts();
+    let mut contacts: HashMap<String, Contact> = load_contacts();
     
     // 주소록 메뉴를 위한 메인 루프
     loop {

@@ -1,3 +1,2 @@
-lee:456
-park:789
-kim:112
+kim:123:seoul
+lee:456:soccho

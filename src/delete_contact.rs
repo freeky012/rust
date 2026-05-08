@@ -1,8 +1,10 @@
 use std::collections::HashMap;
 use std::io::{self, Write};
 
+use crate::Contact;
+
 // 연락처를 삭제하는 함수
-pub fn delete_contact(contacts: &mut HashMap<String, String>) {
+pub fn delete_contact(contacts: &mut HashMap<String, Contact>) {
     print!("Enter name to delete: ");
     io::stdout().flush().unwrap();
     let mut name = String::new();
